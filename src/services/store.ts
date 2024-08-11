@@ -11,7 +11,7 @@ import {
 
 const rootReducer = combineReducers({
   ingredients: ingredientsReducer,
-  ingredientsConstructor: burgerConstructorSlice
+  burgerconstructor: burgerConstructorSlice
 }); // Заменить на импорт настоящего редьюсера inPROGRESS
 
 const store = configureStore({
