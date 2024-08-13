@@ -8,6 +8,7 @@ import {
   getOrderRequest,
   getOrderModalData
 } from '../../services/slices/BurgerConstructorSlice';
+import { selectUser } from '../../services/slices/UserInfoSlice';
 
 export const BurgerConstructor: FC = () => {
   /** TODO: взять переменные constructorItems, orderRequest! и orderModalData! из стора */
@@ -16,14 +17,21 @@ export const BurgerConstructor: FC = () => {
   const constructorItems = useSelector(getConstructorItems);
   const orderRequest = useSelector(getOrderRequest);
   const orderModalData = useSelector(getOrderModalData);
+  const authorized = useSelector(selectUser);
+
+  //todo! to join data for order, use dispatch to create order
 
   // const orderRequest = false;
 
   // const orderModalData = null;
 
   const onOrderClick = () => {
+    if (!authorized) {
+      return navigate('/login'); //проверяем авторизован ли пользователь
+    }
     if (!constructorItems.bun || orderRequest) return;
   };
+
   const closeOrderModal = () => {};
 
   const price = useMemo(

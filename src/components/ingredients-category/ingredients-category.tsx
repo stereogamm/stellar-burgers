@@ -21,7 +21,6 @@ export const IngredientsCategory = forwardRef<
       counters[ingredient._id]++;
     });
     if (bun) counters[bun._id] = 2;
-    console.log(counters);
     return counters; //объект counters содержит точное количество каждого ингредиента
   }, [burgerConstructor]);
 
