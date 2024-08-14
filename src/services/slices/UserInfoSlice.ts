@@ -148,7 +148,7 @@ export const checkUserAuth = createAsyncThunk(
 );
 
 export const { authChecked } = userStateSlice.actions;
-export default userStateSlice.reducer;
+export default userStateSlice;
 
 export const {
   selectUser,

@@ -50,7 +50,7 @@ export const feedDataSlice = createSlice({
   }
 });
 
-export default feedDataSlice.reducer;
+export default feedDataSlice;
 export const {
   getFeedOrders,
   getTotalEmountOrders,
