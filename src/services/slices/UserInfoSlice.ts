@@ -13,6 +13,8 @@ import {
   resetPasswordApi
 } from '@api';
 
+//todo!!! need to sort out with saving tokens!
+
 type TStateUser = {
   isAuthChecked: boolean; //флаг для статуса проверки токена пользователя
   isAuthenticated: boolean;
