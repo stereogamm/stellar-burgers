@@ -9,6 +9,7 @@ import {
 } from '../../services/slices/UserOrdersHistory';
 import { Preloader } from '@ui';
 
+//компонент страницы истории заказов
 export const ProfileOrders: FC = () => {
   const dispatch = useDispatch();
   const isLoad = useSelector(getUserOrdersLoading);
