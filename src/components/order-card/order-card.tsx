@@ -1,17 +1,20 @@
 import { FC, memo, useMemo } from 'react';
-import { useLocation } from 'react-router-dom';
-
+import { useLocation, useParams } from 'react-router-dom';
 import { OrderCardProps } from './type';
 import { TIngredient } from '@utils-types';
 import { OrderCardUI } from '../ui/order-card';
 import { useSelector } from '../../services/store';
 import { getIngredientsWithSelector } from '../../services/slices/IngredientsSlice';
+import { getUserOrdersHistory } from '../../services/slices/UserOrdersHistory'; //
+import { TOrder } from '@utils-types'; //
 
 const maxIngredients = 6;
 
 // Компонент отображает информацию о заказе в виде карточки
 export const OrderCard: FC<OrderCardProps> = memo(({ order }) => {
   const location = useLocation();
+
+  const orders = useSelector(getUserOrdersHistory); // Получаем список заказов из состояния Redux
 
   //подключаем из стора еще и ингридиенты, так как с сервера получаем только id ингридиентов
   const ingredients: TIngredient[] = useSelector(getIngredientsWithSelector);

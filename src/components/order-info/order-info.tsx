@@ -3,20 +3,29 @@ import { Preloader } from '../ui/preloader';
 import { OrderInfoUI } from '../ui/order-info';
 import { TIngredient, TOrder } from '@utils-types';
 import { getIngredientsWithSelector } from '../../services/slices/IngredientsSlice';
-import { getFeedOrders } from '../../services/slices/FeedDataSlice';
-import { useSelector } from '../../services/store';
+import {
+  getFeedOrders,
+  getOrderByNum
+} from '../../services/slices/FeedDataSlice';
+import { useSelector, useDispatch } from '../../services/store';
 import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import { selectOrderById } from '../../services/selector';
 
 export const OrderInfo: FC = () => {
   // Используем useParams для получения параметра (номер заказа) из URL
-  const params = useParams();
+  const { number } = useParams();
   const orders = useSelector(getFeedOrders); // Получаем список заказов из состояния Redux
+  const dispatch = useDispatch();
 
-  const orderData: TOrder | undefined = orders.find(
-    (item) => item.number === Number(params.number)
-  );
-
+  const orderData = useSelector(selectOrderById(Number(number)));
   const ingredients: TIngredient[] = useSelector(getIngredientsWithSelector);
+
+  useEffect(() => {
+    if (!orderData) {
+      dispatch(getOrderByNum(Number(number)));
+    }
+  }, [dispatch]);
 
   /* Готовим данные для отображения. Используем мемоизацию для того, чтобы производить вычисление только если данные изменились */
   const orderInfo = useMemo(() => {
