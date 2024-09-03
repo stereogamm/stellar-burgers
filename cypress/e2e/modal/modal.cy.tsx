@@ -4,7 +4,7 @@ describe('Modal window test', function() {
     this.beforeEach(function() {
         cy.intercept('GET', 'api/ingredients', {fixture: 'ingredients.json'});
         cy.viewport(1300, 800);
-        cy.visit('http://localhost:4000/');
+        cy.visit('/');
     })
 
     //открытие модального окна при клике на ингредиент в списке 

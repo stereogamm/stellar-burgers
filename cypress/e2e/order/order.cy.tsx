@@ -14,7 +14,7 @@ describe('Order test', function () {
         cy.setCookie('accessToken', 'test-accessToken');
 
         cy.viewport(1300, 800);
-        cy.visit('http://localhost:4000/');
+        cy.visit('/');
 
     });
 

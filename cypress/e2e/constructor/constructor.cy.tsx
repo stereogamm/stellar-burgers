@@ -1,10 +1,8 @@
-
-
 describe('Constructor page test', function () {
     this.beforeEach(function() {
         cy.intercept('GET', 'api/ingredients', {fixture: 'ingredients.json'});
         cy.viewport(1300, 800);
-        cy.visit('http://localhost:4000/');
+        cy.visit('/');
     })
 //тест добавления булки в конструктор при клике на кнопку
     it('Test of adding bun', function () {
