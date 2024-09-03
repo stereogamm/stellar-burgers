@@ -41,7 +41,6 @@ describe('Order test', function () {
 
     //Проверка очищения конструктора от ингредиентов
     cy.get('[data-cy=constructor]').should('not.contain', 'Ингридиент_1');
-    cy.get('[data-cy=constructor]').should('not.contain', 'Ингридиент_1');
     cy.get('[data-cy=ingredient_constructor]').should('not.contain', 'Ингридиент_4');
     cy.get('[data-cy=ingredient_constructor]').should('not.contain', 'Ингридиент_2');
    })

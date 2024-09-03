@@ -9,6 +9,7 @@ describe('Modal window test', function() {
 
     //открытие модального окна при клике на ингредиент в списке 
     it('Ingredient modal window is opened', function () {
+        cy.get('[data-cy=modal]').should('not.exist');
         cy.get('[data-cy=bun_ingredients]').contains('Ингредиент_1').click();
         cy.get('[data-cy=modal]').contains('Ингредиент_1').should('exist');
     })
