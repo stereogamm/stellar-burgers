@@ -69,7 +69,7 @@ const testOrders = {
   totalToday: 3
 };
 
-describe('Feed data dlice tests', () => {
+describe('Feed data slice tests', () => {
   // Проверка на установку loading в true и сброс ошибки (error) при состоянии pending
   it('test should set load to true and err to null during pending status', () => {
     const actualState = feedDataSlice.reducer(

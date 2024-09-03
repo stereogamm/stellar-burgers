@@ -12,7 +12,7 @@ import burgerConstructorSlice from './BurgerConstructorSlice';
 
 import { TConstructorIngredient } from '@utils-types';
 
-describe('Constructor Slice Test ', () => {
+describe('Constructor slice tests ', () => {
   const ingredient1: TConstructorIngredient = {
     id: '1',
     _id: '1',
