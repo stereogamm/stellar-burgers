@@ -1,5 +1,4 @@
 const path = require('path');
-// const webpack = require('webpack'); 
 const ESLintPlugin = require('eslint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
@@ -61,9 +60,6 @@ module.exports = (env, argv) => {
     new Dotenv({
       systemvars: true
     }),
-    // new webpack.DefinePlugin({
-    //   'process.env.BURGER_API_URL': JSON.stringify(process.env.BURGER_API_URL || '')
-    // })
   ],
   resolve: {
     extensions: [
