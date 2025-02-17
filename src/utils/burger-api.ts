@@ -75,6 +75,7 @@ type TOrdersResponse = TServerResponse<{
   data: TOrder[];
 }>;
 
+console.log('API URL at build time:', process.env.BURGER_API_URL);
 export const getIngredientsApi = () =>
   fetch(`${URL}/ingredients`)
     .then((res) => checkResponse<TIngredientsResponse>(res))
