@@ -1,5 +1,11 @@
 # Project "Stellar Burgers" 🍔 🍟
 
+-----
+
+[VIEW THE PROJECT](https://zero-gravity-steakhouse.vercel.app/)
+
+----
+
  The application offers the following features:
 
 ✅ The ability to add, remove, and combine ingredients to create a custom order\
